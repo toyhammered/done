@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user! 
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :change]
 
   # GET /tasks
   # GET /tasks.json
@@ -63,6 +63,15 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def change
+    @task.update_attributes(state: params[:state])
+    # after task update is complete, setting format of resulting file
+    # the html format is what we want, we redirect to the tasks path (after updated the states params)
+    respond_to do |format|
+      format.html {redirect_to tasks_path, notice: "Task Updated"}
     end
   end
 
