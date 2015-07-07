@@ -1,18 +1,8 @@
-class CallbacksController < Devise::OmniauthCallbackController
+class CallbacksController < Devise::OmniauthCallbacksController
 
 	def facebook
 		@user = User.from_omniauth(request.env["omniauth.auth"])
-		sign_in_and_redirect @user
-	end
-
-	def twitter
-		@user = User.from_omniauth(request.env["omniauth.auth"])
-		sign_in_and_redirect @user
-	end
-
-	def github
-		@user = User.from_omniauth(request.env["omniauth.auth"])
-		sign_in_and_redirect @user
+		sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
 	end
 
 end
