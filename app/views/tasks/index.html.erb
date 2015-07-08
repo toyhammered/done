@@ -1,15 +1,16 @@
+
 <div class="row">
-  <div class="col-md-4 ">
+  <div class="col-md-4", id="tasks">
     <h1 class="text-center">To Do</h1>
     <%= render @to_do %>
   </div>
 
-  <div class="col-md-4 ">
+  <div class="col-md-4", id="">
     <h1 class="text-center">Doing</h1>
     <%= render @doing %>
   </div>
 
-  <div class="col-md-4 ">
+  <div class="col-md-4"id="">
     <h1 class="text-center">Done</h1>
     <%= render @done %>
   </div>
@@ -17,4 +18,7 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New Task', new_task_path, remote: true, class: "btn btn-primary" %>
+
+<%= render 'dialog' %>
+
