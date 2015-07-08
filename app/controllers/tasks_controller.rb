@@ -75,6 +75,7 @@ class TasksController < ApplicationController
     # the html format is what we want, we redirect to the tasks path (after updated the states params)
     respond_to do |format|
       format.html {redirect_to tasks_path, notice: "Task Updated"}
+      format.js {flash[:notice] = "Task Updated"}
     end
   end
 
