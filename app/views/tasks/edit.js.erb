@@ -1,5 +1,1 @@
-// Render the new form
-$('.modal-body').html('<%= j render("form") %>');
- 
-// Show the dynamic dialog
-$('#dialog').modal("show");
+$('#tasks_<%=@task.id%> .panel-body p').replaceWith('<%= j render("form") %>');

@@ -29,6 +29,8 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'auto_html'
+gem 'jquery-ui-rails'
+
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
