@@ -1,3 +1,23 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signin {
+	display:none;
+}
+
+.landing_page { 
+  background: image-url('home_background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, .4);
+  background-blend-mode: color;
+  height: 100vh;
+}
+
+
+.landing_page body {
+	background-color: transparent;
+}
