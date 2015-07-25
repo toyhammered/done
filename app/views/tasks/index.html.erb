@@ -2,7 +2,17 @@
 <div class="row">
   <div class="col-md-4 tasks", id="tasks_to_do">
     <h1 class="text-center">To Do</h1>
-    <%= render @to_do %>
+
+    <div class="panel panel-default"> 
+      <div class="panel-heading new-task text-center">
+        <%= link_to "<i class='fa fa-plus-circle fa-4x'></i>".html_safe, new_task_path, remote: true, class: "" %>
+      </div>
+    </div>
+
+
+
+
+      <%= render @to_do %>
   </div>
 
   <div class="col-md-4", id="tasks_doing">
@@ -18,7 +28,6 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path, remote: true, class: "btn btn-primary" %>
 
 <%= render 'dialog' %>
 

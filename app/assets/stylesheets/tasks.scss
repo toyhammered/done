@@ -1,3 +1,43 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fixed-panel {
+	min-height: 50px;
+	max-height: 300px;
+	overflow-y: scroll
+}
+
+.well {
+	position: relative;
+}
+
+.center-arrow-left {
+	position: absolute;
+	top: 47%;
+	margin-left: -15px;
+}
+
+.center-arrow-right {
+	position:absolute;
+	float:right;
+	top: 47%;
+	margin-left: 90%;
+
+}
+
+.new-task {
+	height: 150px;
+
+	a i {
+
+		margin-top: 35px;
+	}
+
+}
+
+.panel-body {
+  img {
+    width: 100%;
+  }
+}
