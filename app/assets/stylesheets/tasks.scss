@@ -5,26 +5,30 @@
 .fixed-panel {
 	min-height: 50px;
 	max-height: 300px;
-	overflow-y: scroll
+	margin-left: 30px;
+	margin-right: 30px;
+	overflow-y: hidden;
+
+
+	p {
+		background-color: white;
+		min-height: 50px;
+		margin-bottom: 0;
+		margin-top:-15px;
+		margin-bottom:-15px;
+		border-top: 4px solid black;
+	}
 }
 
-.well {
-	position: relative;
+.panel-heading, .panel-footer{
+	background-color: #eee !important;
+	border-color: #eee !important;
 }
 
-.center-arrow-left {
-	position: absolute;
-	top: 47%;
-	margin-left: -15px;
+.panel-footer {
+	padding-bottom: 20px;
 }
 
-.center-arrow-right {
-	position:absolute;
-	float:right;
-	top: 47%;
-	margin-left: 90%;
-
-}
 
 .new-task {
 	height: 150px;
@@ -40,4 +44,19 @@
   img {
     width: 100%;
   }
+}
+
+.background-grey {
+	background-color: #eee;
+	position: relative;
+	a {
+		position: absolute;
+	    top: 50%;
+	    left: 10px;
+	    transform: translateY(-50%);
+
+	}
+	    .center-arrow-right {
+	    	margin-left: 88%;
+    }
 }

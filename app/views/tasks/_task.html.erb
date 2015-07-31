@@ -1,42 +1,56 @@
-<div class="well", id="tasks_<%=task.id %>"> 
-
-
-	<% if task.state == "doing" %>
-		<%= link_to "<i class='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "to_do"), method: :put, remote: true, class: "center-arrow-left" %>
-		<%= link_to "<i class='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "done"), method: :put, remote: true, class: "center-arrow-right" %>
-	<% elsif task.state == "done" %>
-		<%= link_to "<i class='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, remote: true, class: "center-arrow-left" %>
-	<% else %>
-		<%= link_to "<i class='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, remote: true, class: "center-arrow-right" %>
-	<% end %>
-
-	<div class="panel panel-default"> 
-		<div class="panel-heading">
-			<%= link_to "<i class='fa fa-pencil fa-2x'></i>".html_safe, edit_task_path(task), remote: true, class: "pull-left" %>
 
 
 
 
-			<%= link_to "<i class='fa fa-trash-o fa-2x'></i>".html_safe, task_path(task), remote: true, method: :delete, data: {confirm: "Are you sure?"}, class: "pull-right" %>
-			<p class="text-center">created <%= time_ago_in_words(task.created_at) %> ago</p>
-		</div>
+<div class="panel panel-default" id="tasks_<%=task.id%>"> 
 
 
-
-		<div class="panel-body fixed-panel"><%= raw(task.content_html) %></div>
+	<div class="panel-heading">
+		<%= link_to "<i class='fa fa-pencil fa-2x'></i>".html_safe, edit_task_path(task), remote: true, class: "pull-right" %>
 
 
 
 
+		<%= link_to "<i class='fa fa-trash-o fa-2x'></i>".html_safe, task_path(task), remote: true, method: :delete, data: {confirm: "Are you sure?"}, class: "pull-left" %>
+		<p class="text-center">created <%= time_ago_in_words(task.created_at) %> ago</p>
+	</div>
 
-		<div class="panel-footer text-center">
+
+	<div class=" background-grey">
+		<% if task.state == "doing" %>
+		<%= link_to "<i class='fa fa-arrow-left fa-2x'></i>".html_safe, change_task_path(task, state: "to_do"), method: :put, remote: true, class: "center-arrow-left" %>
+		<%= link_to "<i class='fa fa-arrow-right fa-2x'></i>".html_safe, change_task_path(task, state: "done"), method: :put, remote: true, class: "center-arrow-right" %>
+		<% elsif task.state == "done" %>
+		<%= link_to "<i class='fa fa-arrow-left fa-2x'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, remote: true, class: "center-arrow-left" %>
+		<% else %>
+		<%= link_to "<i class='fa fa-arrow-right fa-2x'></i>".html_safe, change_task_path(task, state: "doing"), method: :put, remote: true, class: "center-arrow-right" %>
+		<% end %>
+
+		<div class="panel-body fixed-panel text-center"><%= raw(task.content_html) %>
 
 		</div>
-
 	</div>
 
 
 
 
 
-</div><!-- closing of well -->
+	<div class="panel-footer">
+
+	</div>
+
+</div>
+
+
+<script>
+
+	<% if task.state == "to_do" %>
+		$("#tasks_to_do .fixed-panel p").css("border-top-color", "green");
+	<% elsif task.state == "doing" %>
+		$("#tasks_doing .fixed-panel p").css("border-top-color", "red");
+	<% else %>
+		$("#tasks_done .fixed-panel p").css("border-top-color", "purple");
+	<% end %>
+
+</script>
+
