@@ -45,11 +45,11 @@
 <script>
 
 	<% if task.state == "to_do" %>
-		$("#tasks_to_do .fixed-panel p").css("border-top-color", "green");
+		$("#tasks_to_do .fixed-panel p").css("border-top-color", "#f90d56");
 	<% elsif task.state == "doing" %>
-		$("#tasks_doing .fixed-panel p").css("border-top-color", "red");
+		$("#tasks_doing .fixed-panel p").css("border-top-color", "#ff970c");
 	<% else %>
-		$("#tasks_done .fixed-panel p").css("border-top-color", "purple");
+		$("#tasks_done .fixed-panel p").css("border-top-color", "#ffe801");
 	<% end %>
 
 </script>

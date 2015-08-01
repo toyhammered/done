@@ -1,5 +1,7 @@
 RAILS_ENV=production bundle exec rake assets:precompile
 
+data-day-chosen="wednesday">
+
 
 
 Issues (maybe move to wiki??):

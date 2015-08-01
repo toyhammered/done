@@ -2,5 +2,3 @@ $('#tasks_<%= @task.id %>').fadeOut();
 $('#tasks_<%= @task.id %>').appendTo('#tasks_<%= @task.state %>').replaceWith('<%= j render (@task) %>')
 $('#tasks_<%= @task.id %>').fadeIn();
 
-
-
