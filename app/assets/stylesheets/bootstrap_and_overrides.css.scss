@@ -7,7 +7,7 @@
   */
 
   .hero-facebook{
-  	background-color: #3b5998;
+    background-color: #3b5998;
     border-radius: 3px;
     color: #fff;
     display: block;
@@ -21,4 +21,47 @@
     }
   }
 
+
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &:focus, &:active:focus, .active:focus {
+      outline: 0 none;
+    }
+
+}
+ 
+
+ 
+.btn-primary {
+    background: #f36c60;
+    color: #ffffff;
+
+    &:hover, &:focus, .open > .dropdown-toggle {
+      color: darken(#f36c60, 5%);
+      background-color: lighten(#f36c60, 5%)
+    }
+
+    &:active, .active {
+      color: darken(#f36c60, 30%);
+      box-shadow: none;
+    }
+}
+
+i {
+  color: #d6d6d6;
+
+  &:hover {
+    color: #9e9d9d;
+  }
+}
+ 
+
+
+ 
 
